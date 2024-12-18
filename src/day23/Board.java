@@ -3,6 +3,7 @@ package day23;
 // 클래스 사용처 :
 // 1. main함수갖는 실행 클래스
 // 2. 객체 생성하기 위한 객체 설계클래스
+// 변수와 객체의 차이점
 // 클래스(도면지/설계도) vs 객체(설계도기반의 메모리공간)
 public class Board { // class s
     // 클래스 구성멤버
@@ -18,9 +19,10 @@ public class Board { // class s
     // 생성자는 클래스명과 이름이 동일해야한다. 동일하지 않으면 함수로 취급된다.
     // - 생성자는 매개변수(함수안으로 들어오는 값들 저장하는 변수)가 있지만 반환값(함수가 종료될때 반환하는 값 )이 없다.
     // 오버로딩 : 동일한 함수명/생성자명 으로 선언은 불가능 하지만 매개변수의 타입,개수,순서 에 따라 식별 가능한 함수 선언 방법
+    // 자동완성 생성 - 생정자로 해서 자동완성으로 코드 작성하면 좀더 빠르고 쉽게 매개변수를 작성할수 있다.
     // 2-1 매개변수 없는 기본생성자
     Board( ){ }
-    // 2-2 매개변수 1개 존재하는 생성자
+    // 2-2 매개변수 1개 존재하는 생성
     public Board(String content) {this.content = content;}
     // 2-3 매개변수 2개 존재하는 생성자
     public Board(String content, String writer) {
@@ -46,8 +48,8 @@ public class Board { // class s
     public void setPwd(int pwd) {this.pwd = pwd;}
     // - toString : Object 객체( 자바의 최상위 클래스 ) 의 메소드
     // 재정의 : Object 클래스내 toString 함수를 재정의한다.
-    // 원래 toString() 함수를 객체의 주소값을 반환하는 함수인데.
-    // 주소값 대신 객체의 필드정보를 출력하기 위해 재정의한다.
+    // 원래 toString() 함수를 객체의 주소값을 반환하는 함수인데. 생략이 가능한 함수이다. 객체의 상태를 확인할때 많이 사용한다.
+    // 개발자가 주소값 대신 객체의 필드정보를 출력하기 위해 재정의한다.
     @Override
     public String toString() {
         return "Board{" +
